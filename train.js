@@ -49,9 +49,12 @@ var timeRemainder = diffTime % snapshot.val().frequency
 
 var minutesAway = snapshot.val().frequency - timeRemainder;
 
-var nextArrivalTime = moment().add(minutesAway, "minutes");
-console.log("ARRIVAL TIME: " + moment(nextArrivalTime).format("hh:mm"));
+var nextTrain = moment().add(minutesAway, "minutes");
+console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
+var nextArrivalTime = moment(nextTrain).format("hh:mm")
+
+console.log("HEY" + moment())
 
 $("#trainList").append("<tr>" +
 "<td>" + snapshot.val().trainName + "</td>" +
