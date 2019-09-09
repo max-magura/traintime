@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Train Time</title>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+      <div class="col-12">
+          <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-5">Train Time Schedule</h1>
+                <h3 class="display-6">Trains come and go. Will you catch yours on time?</h3>
+              </div>
+          </div>
+          
+          <div class="card border-secondary mb-3" style="max-width: 100%;">
+          <div class="card-header">Current Train Schedule</div>
+          <table id="table" class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency (min)</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody id="trainList">
+              </tbody>
+            </table>
+          </div>
+  
+          <div class="card border-secondary mb-3" style="max-width: 100%;">
+            <div class="card-header">Add Train</div>
+            <form id="form">
+                <div class="form-group">
+                  <label for="trainName">Train Name</label>
+                  <input type="text" class="form-control" id="trainName" placeholder="Bay Bound">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="San Francisco">
+                </div>
+                <div class="form-group">
+                    <label for="firstTrainTime">First Train Time (HH:mm in military time)</label>
+                    <input type="text" class="form-control" id="firstTrainTime" placeholder="HH:mm">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency In Minutes</label>
+                    <input type="number" class="form-control" id="frequency" placeholder="5">
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            
+          </div>
+  
+        </div>
+      </div>
+      </div>
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+  <script  type="text/javascript" src="train.js"></script>
+</body>
+</html>

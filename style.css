@@ -3,6 +3,10 @@ body {
   margin: 0 auto;
 }
 
-.form {
-  background-color: green;
+#form {
+  padding: 20px
+}
+
+#table {
+  padding: 20px
 }
