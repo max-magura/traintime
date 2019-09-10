@@ -41,7 +41,7 @@ var timeConverted = moment(snapshot.val().firstTrainTime, "HH:mm").subtract(1, "
   console.log(timeConverted);
 
 var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
 var diffTime = moment().diff(moment(timeConverted), "minutes");
 
@@ -50,11 +50,18 @@ var timeRemainder = diffTime % snapshot.val().frequency
 var minutesAway = snapshot.val().frequency - timeRemainder;
 
 var nextTrain = moment().add(minutesAway, "minutes");
-console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
 
-var nextArrivalTime = moment(nextTrain).format("hh:mm")
+var nextTrainConverted = moment(nextTrain).format("HH:mm")
 
-console.log("HEY" + moment())
+if (nextTrainConverted < "11:59") {
+  var nextArrivalTime  = moment(nextTrain).format("hh:mm") + " AM"
+}
+else {
+  var nextArrivalTime  = moment(nextTrain).format("hh:mm") + " PM"
+  console.log(nextArrivalTime)
+}
+
 
 $("#trainList").append("<tr>" +
 "<td>" + snapshot.val().trainName + "</td>" +
